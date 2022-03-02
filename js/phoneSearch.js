@@ -72,7 +72,7 @@ const displayPhoneDetails = (phone) => {
 
     div.innerHTML = `
     <div class="col-lg-4 col-md-6 col-sm-12">
-        <img src="${phone.image}" alt="" class="img-fluid w-75 mx-auto">
+        <img src="${phone.image}" alt="" class="img-fluid w-50 mx-auto">
         <p>Released ${phone.releaseDate || 'No Release Date found!'}</p>
     </div>
     <div class="col-lg-8 col-md-6 col-sm-12">
