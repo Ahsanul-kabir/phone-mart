@@ -1,6 +1,7 @@
 const phoneName = () => {
-    const phoneName = document.getElementById('phone-name').value;
-    loadPhones(phoneName.toLowerCase());
+    const phoneName = document.getElementById('phone-name');
+    const phoneNameValue = phoneName.value
+    loadPhones(phoneNameValue.toLowerCase());
 }
 
 const loadPhones = async (phoneName) => {
@@ -16,15 +17,14 @@ const displaySearchPhones = (phones) => {
 
     const phoneNotFound = document.getElementById('error')
     const displayPhone = document.getElementById('displayPhone')
-
+    displayPhone.textContent = ''
     const singlePhoneDetail = document.getElementById('single-phone-detail')
+    singlePhoneDetail.textContent = ''
     const otherInfo = document.getElementById('others-info')
+    otherInfo.textContent = ''
     // single phone detail
 
     if (phone20.length == 0) {
-        displayPhone.innerHTML = ''
-        singlePhoneDetail.textContent = ''
-        otherInfo.textContent = ''
         phoneNotFound.style.display = 'block'
         // for not found
     }
@@ -65,7 +65,7 @@ const loadSinglePhone = async (phoneId) => {
 const displayPhoneDetails = (phone) => {
     const singlePhoneDetail = document.getElementById('single-phone-detail');
     const otherInfo = document.getElementById('others-info');
-    singlePhoneDetail.innerHTML = '';
+    singlePhoneDetail.textContent = '';
     singlePhoneDetail.style.display = "block"
     const div = document.createElement('div')
     div.className = 'd-flex justify-content-center'
