@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
 /* font css */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .web-title {
     font-family: 'Poppins', sans-serif;
@@ -35,3 +40,10 @@
 #single-phone-detail{
     display: none;
 }
+.info-details{
+    background-color:aliceblue;
+    width: 90%;
+    margin: 20px;
+    border-radius:10px;
+}
+/* phone-detail */

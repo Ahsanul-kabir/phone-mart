@@ -14,28 +14,38 @@ const loadPhones = async (phoneName) => {
 }
 const displaySearchPhones = (phones) => {
     // console.log(phones)
+    const phone20 = phones.slice(0, 20)
+
     const phoneNotFound = document.getElementById('error')
     const displayPhone = document.getElementById('displayPhone')
 
-    if (phones.length == 0) {
+    const singlePhoneDetail = document.getElementById('single-phone-detail')
+    const otherInfo = document.getElementById('others-info')
+    // single phone detail
+
+    if (phone20.length == 0) {
         displayPhone.innerHTML = ''
+        singlePhoneDetail.textContent = ''
+        otherInfo.textContent = ''
         phoneNotFound.style.display = 'block'
     }
 
     else {
         phoneNotFound.style.display = 'none'
 
-        phones.forEach(phone => {
+        phone20.forEach(phone => {
             // console.log(phone.phone_name)
 
             const div = document.createElement('div')
             div.classList.add('col');
             div.innerHTML = `
-        <img src="${phone.image}" class="card-img-top w-75" alt="...">
+        <img src="${phone.image}" class="card-img-top w-75 d-flex justify-content-center" alt="...">
         <div class="card-body">
             <h5 class="card-title">${phone.phone_name}</h5>
             <p class="card-text">Brand: ${phone.brand}</p>
-            <a class="btn btn-primary text-center" onclick="loadSinglePhone('${phone.slug}')">Details</a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-info text-center" onclick="loadSinglePhone('${phone.slug}')">Details</button>
+            </div>
         </div>
         `
             displayPhone.appendChild(div)
@@ -61,7 +71,7 @@ const displayPhoneDetails = (phone) => {
 
     div.innerHTML = `
     <div class="col-lg-4 col-md-6 col-sm-12">
-        <img src="${phone.image}" alt="" class="img-fluid w-75">
+        <img src="${phone.image}" alt="" class="img-fluid w-75 mx-auto">
         <p>Released ${phone.releaseDate || 'No Release Date found!'}</p>
     </div>
     <div class="col-lg-8 col-md-6 col-sm-12">
@@ -81,6 +91,7 @@ const displayPhoneDetails = (phone) => {
         console.log("no");
     } else {
         otherInfo.innerHTML = ''
+
         const ul = document.createElement('ul');
         // ul.classList.add('list-group');
         const h4 = document.createElement('h4');
