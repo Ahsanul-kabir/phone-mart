@@ -5,8 +5,6 @@ const phoneName = () => {
 
 const loadPhones = async (phoneName) => {
     url = `https://openapi.programming-hero.com/api/phones?search=${phoneName}`
-
-
     const res = await fetch(url)
     const data = await res.json()
     displaySearchPhones(data.data)
@@ -28,14 +26,15 @@ const displaySearchPhones = (phones) => {
         singlePhoneDetail.textContent = ''
         otherInfo.textContent = ''
         phoneNotFound.style.display = 'block'
+        // for not found
     }
 
     else {
         phoneNotFound.style.display = 'none'
-
+        const gifImg = document.getElementById('gif-img');
+        gifImg.style.display = "none"
         phone20.forEach(phone => {
             // console.log(phone.phone_name)
-
             const div = document.createElement('div')
             div.classList.add('col');
             div.innerHTML = `
@@ -51,6 +50,7 @@ const displaySearchPhones = (phones) => {
             displayPhone.appendChild(div)
         })
     }
+    // show phones
 }
 
 const loadSinglePhone = async (phoneId) => {
@@ -89,6 +89,7 @@ const displayPhoneDetails = (phone) => {
     // console.log(phone.others);
     if (phone.others == undefined) {
         console.log("no");
+        otherInfo.innerHTML = ''
     } else {
         otherInfo.innerHTML = ''
 
@@ -110,4 +111,5 @@ const displayPhoneDetails = (phone) => {
     // others info
 
     singlePhoneDetail.appendChild(div)
+    // single phone details show
 }
