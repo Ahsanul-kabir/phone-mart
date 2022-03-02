@@ -32,18 +32,21 @@
                         aria-label="Recipient's username" aria-describedby="button-addon2">
                     <button class="btn btn-warning" type="button" onclick="phoneName()">Search</button>
                 </div>
+                <div class="notify-section col-lg-11 col-md-10 col-sm-8">
+                    <p id="error" class="notify">No Phone Found</p>
+                </div>
             </div>
-            <div class="notify-section col-lg-11 col-md-10 col-sm-8">
-                <p id="error" class="notify">No Phone Found</p>
-            </div>
+        </section>
+        <!-- search section -->
 
-            <!-- search section -->
-
-            <div id="displayPhone" class="row row-cols-1 row-cols-md-3 g-4">
-            </div>
-            <!-- phone results -->
+        <section class="row m-5 mx-auto w-75" id="single-phone-detail">
 
         </section>
+        <!-- single phone details -->
+
+        <section id="displayPhone" class="row row-cols-1 row-cols-md-3 g-4">
+        </section>
+        <!-- phone results -->
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
