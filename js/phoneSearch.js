@@ -52,8 +52,9 @@ const loadSinglePhone = async (phoneId) => {
 }
 
 const displayPhoneDetails = (phone) => {
-    const singlePhoneDetail = document.getElementById('single-phone-detail')
-    singlePhoneDetail.innerHTML = ''
+    const singlePhoneDetail = document.getElementById('single-phone-detail');
+    const otherInfo = document.getElementById('others-info');
+    singlePhoneDetail.innerHTML = '';
     singlePhoneDetail.style.display = "block"
     const div = document.createElement('div')
     div.className = 'd-flex justify-content-center'
@@ -75,5 +76,27 @@ const displayPhoneDetails = (phone) => {
         <p>Sensors: ${phone.mainFeatures.sensors}</p>
     </div>
     `
+    // console.log(phone.others);
+    if (phone.others == undefined) {
+        console.log("no");
+    } else {
+        otherInfo.innerHTML = ''
+        const ul = document.createElement('ul');
+        // ul.classList.add('list-group');
+        const h4 = document.createElement('h4');
+        h4.innerText = 'Other Info:';
+        h4.classList.add('text-danger');
+        ul.appendChild(h4)
+        for (const [key, value] of Object.entries(phone.others)) {
+            const li = document.createElement('li');
+            // li.classList.add('list-group-item');
+            li.innerText = `${key}: ${value}`;
+            // console.log(`${key}: ${value}`);
+            ul.appendChild(li);
+        }
+        otherInfo.appendChild(ul);
+    }
+    // others info
+
     singlePhoneDetail.appendChild(div)
 }
