@@ -1,3 +1,33 @@
-h1{
-     color: #fff;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
+/* font css */
+
+.web-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+    color: #31A5AC;
+}
+/* header text */
+
+.notify {
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    background: #222436;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 5px 20px;
+    display: none;
+}
+
+.notify-section {
+    width: 35%;
+    margin: 0 auto;
+}
+
+/* alert css */
+
+.card{
+    width: 18rem;
 }
