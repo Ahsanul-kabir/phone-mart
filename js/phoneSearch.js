@@ -37,6 +37,7 @@ const displaySearchPhones = (phones) => {
             // console.log(phone.phone_name)
             const div = document.createElement('div')
             div.classList.add('col');
+            div.className = 'shadow-sm bg-body rounded'
             div.innerHTML = `
         <img src="${phone.image}" class="card-img-top w-75 d-flex justify-content-center" alt="...">
         <div class="card-body">
